@@ -3,5 +3,6 @@ dist
 .tmp
 .sass-cache
 .ruby-version
+*.sublime-*
 app/bower_components
 app/test/bower_components
