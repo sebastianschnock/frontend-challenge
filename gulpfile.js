@@ -3,9 +3,16 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var mainBowerFiles = require('main-bower-files');
-var livereload = require('gulp-livereload')
+var livereload = require('gulp-livereload');
+var sass = require('gulp-sass');
 
-gulp.task('styles', function () {
+gulp.task('sass', function () {
+  return gulp.src('app/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('app/styles'));
+});
+
+gulp.task('styles', ['sass'], function () {
   return gulp.src('app/styles/application.css')
     .pipe($.size());
 });
@@ -69,7 +76,7 @@ gulp.task('connect', function () {
     .use(connect.directory('app'));
 
   require('http').createServer(app)
-    .listen(8000)
+    .listen(8001)
     .on('listening', function () {
       console.log('Started connect web server on http://localhost:8000');
     });
@@ -106,6 +113,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
     livereload.changed(file.path);
   });
 
+  gulp.watch('app/sass/**/*.scss', ['sass']);
   gulp.watch('app/styles/**/*.css', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/images/**/*', ['images']);
