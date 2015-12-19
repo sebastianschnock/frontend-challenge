@@ -13,15 +13,54 @@
     <!-- endbuild -->
   </head>
   <body>
-    <div class="l-container">
-      <h1>Hello World!</h1>
-      <p>
+
+
+    <!-- Flat description -->
+
+    <section class="l-container flat-description">
+
+      <header class='flat-description__header'>
         <img src="images/icon-description.png" alt="icon" />
-      </p>
-      <p>
-        <img src="images/separator.png" alt="separator" />
-      </p>
-    </div>
+        Description
+      </header>
+
+      <section class='flat-description__text'>
+
+        <!-- Short description -->
+
+        <p class='short-description__text'>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. <strong>Excepturi</strong> facilis cum quo doloribus beatae possimus a, officiis nesciunt voluptate fuga. Adipisci velit ad laborum hic expedita optio ipsa <strong>maxime</strong> aspernatur!
+        </p>
+
+        <p class='short-description__text'>
+          <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, exercitationem, cumque! Suscipit rem magnam, illo recusandae harum, soluta, totam quod a officia natus dolore quam mollitia, nisi. Earum, nam, sint?</span>
+          <span>Neque modi rem excepturi tempora nostrum non saepe asperiores adipisci similique nihil impedit repellendus fuga provident perspiciatis voluptatum quod, voluptate molestiae laborum officia labore pariatur. Blanditiis autem facere nulla, molestiae.</span>
+        </p>
+
+        <!--  Extra info -->
+
+        <section class='extra-info hidden' data-test='extra-info'>
+
+          <p class='separator'>
+            <img src="images/separator.png" alt="separator" />
+          </p>
+
+          <header class='extra-info__header'>House rules</header>
+          <p class='extra-info__text'>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam pariatur expedita incidunt similique, qui quibusdam, ab natus quae dicta accusamus illo repellat fugit id dolorum commodi, optio soluta ea minima.
+          </p>
+
+        </section>
+
+      </section>
+
+      <!-- Toggle extra info -->
+
+      <button class='flat-description__show-more hidden' data-test='toggle-extra-info'>
+        Show more
+      </button>
+
+    </section>
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
