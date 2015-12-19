@@ -1,0 +1,134 @@
+//-----------------------------------------------------------------------------
+//
+// Color definitions
+//
+//-----------------------------------------------------------------------------
+
+
+
+$color-bg-body: #f2f2f2;
+$color-bg-box: #fff;
+$color-border-default: #d3d3d3;
+$color-font-button: #fff;
+$color-font-default: #70747c;
+$color-font-header: #303030;
+$color-shadow-box: #000;
+
+
+
+
+
+//-----------------------------------------------------------------------------
+//
+// Fonts
+//
+//-----------------------------------------------------------------------------
+
+
+
+$font-size-default: 14px;
+$font-size-large: 18px;
+$font-size-small: 12px;
+
+
+
+
+
+//-----------------------------------------------------------------------------
+//
+// Generic elements
+//
+//-----------------------------------------------------------------------------
+
+
+
+html > * {
+  font-size: $font-size-default;
+}
+
+body {
+  background-color: $color-bg-body;
+}
+
+
+header {
+  color: $color-font-header;
+  font-size: $font-size-large;
+  font-weight: bold;
+}
+
+button {
+  background: linear-gradient(#01c2fb, #03a7ff);
+  border-radius: 4px;
+  border: 1px solid $color-border-default;
+  color: $color-font-button;
+  font-size: $font-size-small;
+  padding: 0.6em 1.2em;
+}
+
+
+
+
+
+//-----------------------------------------------------------------------------
+//
+// Utilities
+//
+//-----------------------------------------------------------------------------
+
+
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.hidden {
+    display: none;
+}
+
+.separator {
+  text-align: center;
+}
+
+
+
+
+
+//-----------------------------------------------------------------------------
+//
+// Main
+//
+//-----------------------------------------------------------------------------
+
+
+
+.l-container {
+  @extend .clearfix;
+  background: $color-bg-box;
+  border-radius: 4px;
+  border: 1px solid $color-border-default;
+  box-shadow: 0 1px 3px rgba($color-shadow-box, .1);
+  margin: 50px auto;
+  padding: 20px;
+  width: 400px;
+}
+
+.flat-description__text {
+  border: 1px solid $color-border-default;
+  border-left: none;
+  border-right: none;
+  margin: 10px 0;
+}
+
+.flat-description__show-more {
+  float: right;
+}
+
+.short-description__text,
+.extra-info__text {
+  color: $color-font-default;
+}
