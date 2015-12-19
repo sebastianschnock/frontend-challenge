@@ -5,6 +5,13 @@ var $ = require('gulp-load-plugins')();
 var mainBowerFiles = require('main-bower-files');
 var livereload = require('gulp-livereload');
 var sass = require('gulp-sass');
+var babel = require('gulp-babel');
+
+gulp.task('es6', function () {
+  return gulp.src('app/es6/main.js')
+    .pipe(babel())
+    .pipe(gulp.dest('app/scripts'));
+});
 
 gulp.task('sass', function () {
   return gulp.src('app/sass/**/*.scss')
@@ -12,7 +19,7 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('app/styles'));
 });
 
-gulp.task('styles', ['sass'], function () {
+gulp.task('styles', function () {
   return gulp.src('app/styles/application.css')
     .pipe($.size());
 });
@@ -116,6 +123,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
   gulp.watch('app/sass/**/*.scss', ['sass']);
   gulp.watch('app/styles/**/*.css', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
+  gulp.watch('app/es6/**/*.js', ['es6']);
   gulp.watch('app/images/**/*', ['images']);
   gulp.watch('bower.json', ['wiredep']);
 });
