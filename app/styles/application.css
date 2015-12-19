@@ -1,8 +1,6 @@
-html > * {
-  font-size: 14px; }
-
 body {
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  font-size: 14px; }
 
 header {
   color: #303030;
@@ -16,17 +14,8 @@ button {
   color: #fff;
   font-size: 12px;
   padding: 0.6em 1.2em; }
-
-.clearfix:after, .l-container:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-.hidden {
-  display: none; }
-
-.separator {
-  text-align: center; }
+  button.hidden {
+    display: none; }
 
 .l-container {
   background: #fff;
@@ -46,6 +35,25 @@ button {
 .flat-description__show-more {
   float: right; }
 
+.extra-info {
+  max-height: 250px; }
+
 .short-description__text,
 .extra-info__text {
   color: #70747c; }
+
+.clearfix:after, .l-container:after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.hidden {
+  max-height: 0;
+  overflow: hidden; }
+
+.separator {
+  text-align: center; }
+
+.slideable {
+  overflow: hidden;
+  transition: max-height 0.4s; }

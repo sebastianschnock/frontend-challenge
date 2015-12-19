@@ -42,12 +42,9 @@ $font-size-small: 12px;
 
 
 
-html > * {
-  font-size: $font-size-default;
-}
-
 body {
   background-color: $color-bg-body;
+  font-size: $font-size-default;
 }
 
 
@@ -64,34 +61,10 @@ button {
   color: $color-font-button;
   font-size: $font-size-small;
   padding: 0.6em 1.2em;
-}
 
-
-
-
-
-//-----------------------------------------------------------------------------
-//
-// Utilities
-//
-//-----------------------------------------------------------------------------
-
-
-
-.clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
-.hidden {
+  &.hidden {
     display: none;
-}
-
-.separator {
-  text-align: center;
+  }
 }
 
 
@@ -128,7 +101,45 @@ button {
   float: right;
 }
 
+.extra-info {
+  max-height: 250px;
+}
+
 .short-description__text,
 .extra-info__text {
   color: $color-font-default;
+}
+
+
+
+
+
+//-----------------------------------------------------------------------------
+//
+// Utilities
+//
+//-----------------------------------------------------------------------------
+
+
+
+.clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.separator {
+  text-align: center;
+}
+
+.slideable {
+  overflow: hidden;
+  transition: max-height 0.4s;
 }
