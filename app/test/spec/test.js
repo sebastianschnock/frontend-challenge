@@ -3,11 +3,35 @@
 (function () {
   'use strict';
 
-  describe('Give it some context', function () {
-    describe('maybe a bit more context here', function () {
-      it('should run here few assertions', function () {
-        expect(true).toBeTruthy();
+  describe('The test application', function () {
+
+    describe('The show/hide extra info button', function () {
+
+      beforeEach(function() {
+        loadFixtures('test.html');
+        wimdu.init(document);
       });
+
+      it('should show and hide extra info when clicked', function () {
+
+        var button = document.querySelector('[data-test="toggle-extra-info"]');
+        var extraInfo = document.querySelector('[data-test="extra-info"]');
+
+        button.click();
+        expect(extraInfo).not.toHaveClass('hidden');
+
+        button.click();
+        expect(extraInfo).toHaveClass('hidden');
+      });
+
+      it('should change label when clicked', function() {
+
+        var button = document.querySelector('[data-test="toggle-extra-info"]');
+        expect(button).toHaveText('Show more');
+        button.click();
+        expect(button).toHaveText('Show less');
+      });
+
     });
   });
 })();
